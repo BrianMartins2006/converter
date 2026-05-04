@@ -42,19 +42,73 @@ def decimal_to_octal(n):
 
 # Todo 
 def binary_to_decimal(b):
-    """Converte Binário para Decimal (Brian)"""
-   # TODO:
-    return "Em desenvolvimento..."
+    """Converte Binário para Decimal (Luiz)"""
+    try:
+        resultado = 0
+        
+        for digito in b:
+            if digito not in '01':
+                return "Erro: número binário inválido"
+            
+            resultado = resultado * 2 + int(digito)
+        
+        return resultado
+    except ValueError:
+        return "Erro: Entrada inválida"
+
 
 def binary_to_hexadecimal(b):
-    """Converte Binário para Hexadecimal (Brian)"""
-    # TODO:
-    return "Em desenvolvimento..."
+    try:
+        resultado = 0
+        hex_chars = "0123456789ABCDEF"
+        
+        # binário → decimal
+        for digito in b:
+            if digito not in '01':
+                return "Erro: número binário inválido"
+            
+            resultado = resultado * 2 + int(digito)
+        
+        # decimal → hexadecimal
+        if resultado == 0:
+            return "0"
+        
+        hexadecimal = ""
+        while resultado > 0:
+            hexadecimal = hex_chars[resultado % 16] + hexadecimal
+            resultado //= 16
+        
+        return hexadecimal
+    
+    except ValueError:
+        return "Erro: Entrada inválida"
 
 def binary_to_octal(b):
-    """Converte Binário para Octal (Brian)"""
-    # TODO:
-    return "Em desenvolvimento..."
+    try:
+        resultado = 0
+        oct_chars = "012345678"
+        
+        # binário → decimal
+        for digito in b:
+            if digito not in '01':
+                return "Erro: número binário inválido"
+            
+            resultado = resultado * 2 + int(digito)
+        
+        # decimal → octal
+        if resultado == 0:
+            return "0"
+        
+        octal = ""
+        while resultado > 0:
+            octal = oct_chars[resultado % 8] + octal
+            resultado //= 8
+        
+        return octal
+    
+    except ValueError:
+        return "Erro: Entrada inválida"
+
 
 def hexadecimal_to_binary(h):
     """Converte Hexadecimal para Binário (Nicolas)"""
