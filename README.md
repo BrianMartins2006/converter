@@ -55,7 +55,7 @@ Conforme os requisitos da atividade, **não foram utilizadas** funções como `b
 
 - **Brian Martins**: Desenvolvimento do Backend, Lógica de Decimal e Estruturação.
 - **Luiz Felipe**: Lógica de Binário.
-- **Nicolas Vitor Alves **: Lógica de Hexadecimal.
+- **Nicolas Vitor Alves**: Lógica de Hexadecimal.
 - **Lucas Antonio Ferreira Neto**: Lógica de Octal.
 
 ---
