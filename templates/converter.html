@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 style="margin-bottom: 1rem;">Área de <span style="color: var(--primary);">Conversão</span></h1>
+<p style="margin-bottom: 3rem;">Escolha a base de origem e o destino para realizar o cálculo manual.</p>
+
+<div class="converter-grid">
+     <!-- Binary -->
+    <div class="base-card">
+        <h3>② Binário</h3>
+        <div class="input-group">
+            <input type="text" id="binValue" placeholder="Digite em binário...">
+        </div>
+        <select id="binTarget" class="input-group"
+            style="width: 100%; background: var(--bg); color: white; padding: 0.8rem; border-radius: 12px; border: 1px solid var(--glass-border); margin-bottom: 1rem;">
+            <option value="decimal">Para Decimal</option>
+            <option value="hex">Para Hexadecimal</option>
+            <option value="octal">Para Octal</option>
+        </select>
+        <button class="btn-convert" onclick="doConvert('binary', 'binValue', 'binTarget')">Converter</button>
+    </div>
+
+    <!-- Octal -->
+    <div class="base-card">
+        <h3>⑧ Octal</h3>
+        <div class="input-group">
+            <input type="text" id="octValue" placeholder="Ex: 755...">
+        </div>
+        <select id="octTarget" class="input-group"
+            style="width: 100%; background: var(--bg); color: white; padding: 0.8rem; border-radius: 12px; border: 1px solid var(--glass-border); margin-bottom: 1rem;">
+            <option value="binary">Para Binário</option>
+            <option value="decimal">Para Decimal</option>
+            <option value="hex">Para Hexadecimal</option>
+        </select>
+        <button class="btn-convert" onclick="doConvert('octal', 'octValue', 'octTarget')">Converter</button>
+    </div>
+
+    <!-- Decimal -->
+    <div class="base-card">
+        <h3>⑩ Decimal</h3>
+        <div class="input-group">
+            <input type="text" id="decValue" placeholder="Digite um decimal...">
+        </div>
+        <select id="decTarget" class="input-group"
+            style="width: 100%; background: var(--bg); color: white; padding: 0.8rem; border-radius: 12px; border: 1px solid var(--glass-border); margin-bottom: 1rem;">
+            <option value="binary">Para Binário</option>
+            <option value="hex">Para Hexadecimal</option>
+            <option value="octal">Para Octal</option>
+        </select>
+        <button class="btn-convert" onclick="doConvert('decimal', 'decValue', 'decTarget')">Converter</button>
+    </div>
+
+   
+    <!-- Hexadecimal -->
+    <div class="base-card">
+        <h3>⑯ Hexadecimal</h3>
+        <div class="input-group">
+            <input type="text" id="hexValue" placeholder="Ex: 1A2F...">
+        </div>
+        <select id="hexTarget" class="input-group"
+            style="width: 100%; background: var(--bg); color: white; padding: 0.8rem; border-radius: 12px; border: 1px solid var(--glass-border); margin-bottom: 1rem;">
+            <option value="binary">Para Binário</option>
+            <option value="decimal">Para Decimal</option>
+            <option value="octal">Para Octal</option>
+        </select>
+        <button class="btn-convert" onclick="doConvert('hex', 'hexValue', 'hexTarget')">Converter</button>
+    </div>
+
+    
+</div>
+{% endblock %}

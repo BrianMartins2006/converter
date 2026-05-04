@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 style="margin-bottom: 3rem; text-align: center;">Nossa <span style="color: var(--primary);">Equipe</span></h1>
+
+<div class="team-grid">
+    {% for integrante in integrantes %}
+    <div class="glass-card member-card">
+        <h2>{{ integrante.nome }}</h2>
+        <p style="margin-top: 1rem; color: var(--text);">{{ integrante.funcao }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

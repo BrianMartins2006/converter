@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="glass-card">
+    <h1>A Linguagem dos <br><span style="color: var(--primary);">Sistemas Digitais.</span></h1>
+    <p>
+        Bases numéricas são as fundações de toda a computação moderna. Enquanto nós humanos utilizamos o sistema decimal (base 10) por conveniência biológica, as máquinas operam fundamentalmente em binário (base 2), onde a presença ou ausência de tensão elétrica define a informação.
+    </p>
+    <p>
+        A compreensão de bases como <b>Hexadecimal</b> e <b>Octal</b> é crucial para engenheiros e programadores, pois estas bases servem como formas abreviadas e legíveis de representar longas sequências de bits, facilitando o endereçamento de memória e a definição de cores, permissões de arquivos e protocolos de rede.
+    </p>
+    <div style="margin-top: 2rem;">
+        <a href="{{ url_for('conversor') }}" class="btn-convert" style="padding: 1rem 2rem; text-decoration: none;">Começar a Converter</a>
+    </div>
+</div>
+
+<div class="converter-grid">
+    <div class="base-card">
+        <h3>01 Binário</h3>
+        <p>A base da computação. Representa estados ligado/desligado.</p>
+    </div>
+    <div class="base-card">
+        <h3>08 Octal</h3>
+        <p>Compacta 3 bits em único caractere.</p>
+    </div>
+    <div class="base-card">
+        <h3>10 Decimal</h3>
+        <p>Nosso sistema cotidiano, baseado em 10 símbolos (0-9).</p>
+    </div>
+    <div class="base-card">
+        <h3>16 Hexadecimal</h3>
+        <p>Compacta 4 bits em um único caractere (0-F).</p>
+    </div>
+</div>
+{% endblock %}
