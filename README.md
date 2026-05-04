@@ -53,9 +53,10 @@ Conforme os requisitos da atividade, **não foram utilizadas** funções como `b
 
 ## 👥 Equipe
 
-- **Brian Martins**: Desenvolvimento do Backend, Lógica de Decimal/Binário e Estruturação.
-- **Integrante 2**: Lógica de Hexadecimal.
-- **Integrante 3**: Lógica de Octal.
+- **Brian Martins**: Desenvolvimento do Backend, Lógica de Decimal e Estruturação.
+- **Luiz Felipe**: Lógica de Binário.
+- **Nicolas Vitor Alves**: Lógica de Hexadecimal.
+- **Lucas Antonio Ferreira Neto**: Lógica de Octal.
 
 ---
 *Projeto desenvolvido para fins acadêmicos.*
