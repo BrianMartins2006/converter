@@ -112,18 +112,66 @@ def binary_to_octal(b):
 
 def hexadecimal_to_binary(h):
     """Converte Hexadecimal para Binário (Nicolas)"""
-    # TODO:
-    return "Em desenvolvimento..."
-
+    try:
+        # hexadecimal → decimal
+        decimal = hexadecimal_to_decimal(h)
+        if isinstance(decimal, str):
+            return decimal  # erro
+        
+        # decimal → binário
+        if decimal == 0:
+            return "0"
+        
+        binary = ""
+        while decimal > 0:
+            binary = str(decimal % 2) + binary
+            decimal //= 2
+        
+        return binary
+    
+    except ValueError:
+        return "Erro: Entrada inválida"
+    
 def hexadecimal_to_decimal(h):
     """Converte Hexadecimal para Decimal (Nicolas)"""
-    # TODO: 
-    return "Em desenvolvimento..."
+    try:
+        h = h.upper()
+        hex_chars = "0123456789ABCDEF"
+        resultado = 0
+        
+        for digito in h:
+            if digito not in hex_chars:
+                return "Erro: número hexadecimal inválido"
+            
+            valor = hex_chars.index(digito)
+            resultado = resultado * 16 + valor
+        
+        return resultado
+    
+    except ValueError:
+        return "Erro: Entrada inválida"
 
 def hexadecimal_to_octal(h):
     """Converte Hexadecimal para Octal (Nicolas)"""
-    # TODO:
-    return "Em desenvolvimento..."
+    try:
+        # hexadecimal → decimal
+        decimal = hexadecimal_to_decimal(h)
+        if isinstance(decimal, str):
+            return decimal  # erro
+        
+        # decimal → octal
+        if decimal == 0:
+            return "0"
+        
+        octal = ""
+        while decimal > 0:
+            octal = str(decimal % 8) + octal
+            decimal //= 8
+        
+        return octal
+    
+    except ValueError:
+        return "Erro: Entrada inválida"
 
 def octal_to_binary(o):
     """Converte Octal para Binário (Lucas)"""
