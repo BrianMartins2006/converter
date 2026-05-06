@@ -5,14 +5,14 @@ const modalTitle = document.getElementById("modalTitle");
 const modalSubtitle = document.getElementById("modalSubtitle");
 
 // Fechar modal
-span.onclick = function () {
-    modal.style.display = "none";
+span.onclick = function() {
+  modal.style.display = "none";
 }
 
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 async function doConvert(fromBase, valueId, targetId) {
@@ -38,7 +38,7 @@ async function doConvert(fromBase, valueId, targetId) {
         });
 
         const data = await response.json();
-
+        
         // Tradução para o Modal
         const basesPt = {
             'decimal': 'DECIMAL',
@@ -52,7 +52,7 @@ async function doConvert(fromBase, valueId, targetId) {
         modalSubtitle.innerText = `Para ${basesPt[toBase] || toBase.toUpperCase()}`;
         resultText.innerText = data.result;
         modal.style.display = "block";
-
+        
     } catch (error) {
         console.error('Erro:', error);
         alert("Ocorreu um erro na conversão.");
