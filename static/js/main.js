@@ -39,9 +39,17 @@ async function doConvert(fromBase, valueId, targetId) {
 
         const data = await response.json();
         
+        // Tradução para o Modal
+        const basesPt = {
+            'decimal': 'DECIMAL',
+            'binary': 'BINÁRIO',
+            'hex': 'HEXADECIMAL',
+            'octal': 'OCTAL'
+        };
+
         // Mostrar no Modal
-        modalTitle.innerText = `Conversão de ${fromBase.toUpperCase()}`;
-        modalSubtitle.innerText = `Para ${toBase.toUpperCase()}`;
+        modalTitle.innerText = `Conversão de ${basesPt[fromBase] || fromBase.toUpperCase()}`;
+        modalSubtitle.innerText = `Para ${basesPt[toBase] || toBase.toUpperCase()}`;
         resultText.innerText = data.result;
         modal.style.display = "block";
         
