@@ -173,17 +173,65 @@ def hexadecimal_to_octal(h):
     except ValueError:
         return "Erro: Entrada inválida"
 
-def octal_to_binary(o):
-    """Converte Octal para Binário (Lucas)"""
-    # TODO: 
-    return "Em desenvolvimento..."
-
 def octal_to_decimal(o):
     """Converte Octal para Decimal (Lucas)"""
-    # TODO:
-    return "Em desenvolvimento..."
+    try:
+        resultado = 0
+
+        for digito in o:
+            if digito not in '01234567':
+                return "Erro: número octal inválido"
+
+            resultado = resultado * 8 + int(digito)
+
+        return resultado
+
+    except ValueError:
+        return "Erro: Entrada inválida"
+
+
+def octal_to_binary(o):
+    """Converte Octal para Binário (Lucas)"""
+    try:
+        decimal = octal_to_decimal(o)
+
+        if isinstance(decimal, str):
+            return decimal
+
+        if decimal == 0:
+            return "0"
+
+        binary = ""
+
+        while decimal > 0:
+            binary = str(decimal % 2) + binary
+            decimal //= 2
+
+        return binary
+
+    except ValueError:
+        return "Erro: Entrada inválida"
+
 
 def octal_to_hexadecimal(o):
     """Converte Octal para Hexadecimal (Lucas)"""
-    # TODO: 
-    return "Em desenvolvimento..."
+    try:
+        decimal = octal_to_decimal(o)
+
+        if isinstance(decimal, str):
+            return decimal
+
+        if decimal == 0:
+            return "0"
+
+        hex_chars = "0123456789ABCDEF"
+        hexadecimal = ""
+
+        while decimal > 0:
+            hexadecimal = hex_chars[decimal % 16] + hexadecimal
+            decimal //= 16
+
+        return hexadecimal
+
+    except ValueError:
+        return "Erro: Entrada inválida"
